@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package streaming;
+
+option go_package = "generated/code;streaming";
+
+service StreamingService {
+  rpc BidirectionalStreaming (stream StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+  string message = 1;
+}
+
+message StreamResponse {
+  string message = 1;
+}
